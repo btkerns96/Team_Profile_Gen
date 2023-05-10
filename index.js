@@ -14,26 +14,53 @@ teamArray = [];
 
 function runApp () {
 
-    function createTeam () {
-      inquirer.prompt([{
-        type: "list",
-        message: "What type of employee would you like to add to your team?",
-        name: "addEmployeePrompt",
-        choices: ["Manager", "Engineer", "Intern", "No more team members are needed."]
-      }]).then(function (userInput) {
-        switch(userInput.addEmployeePrompt) {
-          case "Manager":
-            addManager();
-            break;
-          case "Engineer":
-            addEngineer();
-            break;
-          case "Intern":
-            addIntern();
-            break;
-  
-          default:
-            htmlBuilder();
-        }
-      })
-}}
+  function createTeam () {
+    inquirer.prompt([{
+      type: "list",
+      message: "What type of employee would you like to add to your team?",
+      name: "addEmployeePrompt",
+      choices: ["Manager", "Engineer", "Intern", "No more team members are needed."]
+    }]).then(function (userInput) {
+      switch(userInput.addEmployeePrompt) {
+        case "Manager":
+          addManager();
+          break;
+        case "Engineer":
+          addEngineer();
+          break;
+        case "Intern":
+          addIntern();
+          break;
+
+        default:
+          htmlBuilder();
+      }
+    })
+  }
+// OOP Functions
+function addManager() {
+  inquirer.prompt ([
+    
+    {
+      type: "input",
+      name: "managerName",
+      message: "What is the manager's name?"
+    },
+
+    {
+      type: "input",
+      name: "managerId",
+      message: "What is the manager's employee ID number?"
+    },
+
+    {
+      type: "input",
+      name: "managerEmail",
+      message: "What is the manager's email address?"
+    },
+
+    {
+      type: "input",
+      name: "managerOfficeNumber",
+      message: "What is the manager's office number?"
+    }
