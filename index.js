@@ -48,6 +48,7 @@ function addManager() {
     },
 
     {
+
       type: "input",
       name: "managerId",
       message: "What is the manager's employee ID number?"
